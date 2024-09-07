@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIAGO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        *{
+            background-color: black;
+            
+        }
+        p,td{
+            font-size: 140%;
+            color: white;
+        }
+        th{
+            color: violet;
+            font-size: 200%;
+        }
+        th,td{
+            text-align: center;
+        }
+        nav{
+          
+          padding-top:15px;
+          padding-bottom: 15px;
+          background-color:black;         
+        }
+        nav a{
+          margin:0 80px;
+          font-size:30px;
+          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          color:white;
+        }
+        a:hover{
+          text-decoration: none;
+          color:violet;
+        }
+        
+    </style>
+</head>
+<body>
+  <nav>
+    <a href="#"style="font-family: Arial, Helvetica, sans-serif; font-size: 30px;"><b>TIAGO</b></a>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#spec">Specifications</a>
+      <a href="#prices">Models & prices</a>
+   </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <img src="Tiago.jpeg" alt="" width="100%" >
+        </div>
+        <section id="features">
+        <div class="row">
+            <h1 style="text-align: center; font-size: 1000%; color: white;"><i>FEATURES</i></h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                <img src="https://www.tatamotors.com/wp-content/uploads/2018/08/07105350/press-07aug18-2-02.jpg" alt="" width="100%">
+            </div>
+            <div class="col-xs-5"><br><br><br><br>
+                <h1 style="color: violet; font-size: 350%; text-align: center;font-weight: 700;"><i>ENERGY ABSORBING BODY STRUCTURE</i></h1><br><br>
+                <p style="color: white; text-align: center;">Strong body structure that can absorb impact energy, offering superior safety with 4 star GNCAP rating.</p>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-xs-5"><br><br><br><br>
+                <h1 style="color: violet; font-size: 350%; text-align: center;font-weight: 700;"><i>DUAL AIRBAGS</i></h1><br><br>
+                <p style="color: white; text-align: center;">Prevents the occupants from striking hard surfaces like dashboard during an impact,
+                     thereby, minimizing injuries.</p>
+            </div>
+            <div class="col-xs-7">
+                <img src="data:image/jpeg;base64,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
+                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" alt="" width="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                <img src="https://images.91wheels.com/news/wp-content/uploads/2021/01/tmps-featured.jpg?w=1080&q=65" alt="" width="100%">
+            </div>
+            <div class="col-xs-5"><br><br><br>
+                <h1 style="color: violet; font-size: 350%; text-align: center;font-weight: 700;"><i>TYRE PRESSURE MONITORING SYSTEM
+                </i></h1><br><br>
+                <p style="color: white; text-align: center;">TPMS enables you to maintain and check the right tyre pressure resulting in
+                     improved vehicle handling and fuel efficiency.</p>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-xs-5">
+                <br><br><br><br>
+                <h1 style="color: violet; font-size: 350%; text-align: center;font-weight: 700;"><i>SPEED SENSITIVE AUTO DOOR LOCKING</i></h1><br><br><br>
+                <p style="color: white; text-align: center;">Ensures that doors don't open by accident when the car is in motion. Added safety.</p>
+            </div>
+            <div class="col-xs-7">
+                <img src="https://www.motownindia.com/images/Auto-Pit-Cars/2124-0-Tata-Tigor-iCNG.jpg" alt="" width="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                <img src="https://www.angclassicmotors.com/assets_old/images/cars/338965949anti-lock-braking-system.jpg" alt="pjiok" width="100%">
+            </div>
+            <div class="col-xs-5">
+                <br><br><br>
+                <h1 style="color: violet; font-size: 350%; text-align: center;font-weight: 700;"><i>ABS WITH EBD AND CORNER STABILITY CONTROL</i></h1><br><br>
+                <p style="color: white; text-align: center;">Enhances safety during panic braking and provides directional control</p>
+            </div>
+            
+        </div>
+      </section>
+
+
+      <section id="spec">
+        <div class="row">
+            <h1 style="text-align: center; font-size: 800%; color: white;"><i>Specifications</i></h1>
+        </div>
+    </div>    
+        <div class="container-fluid" style="background-color: black;">
+            <table class="table table-bordered" style="width: 80%" align="center">
+                <thead>
+                  <tr>
+                    <th>Specifications</th>
+                    <th>Details</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="2"><br>Engine</td>
+                    <td>1.2L Revotron Petrol</td>
+                  </tr>
+                  <tr>
+                    
+                    <td>1.2L Revotron Petrol</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><br>Maximum Power</td>
+                    <td>Petrol: 85 PS @ 6000 rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Diesel: 70 PS @ 4000 rpm</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><br>Maximum Torque</td>
+                    <td>Petrol: 113 Nm @ 3300 rpm</td>
+                  </tr>
+                  <tr>
+                    <td>Diesel: 140 Nm @ 1800-3000 rpm</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><br>Transmission</td>
+                    <td>5-speed Manual</td>
+                  </tr>
+                  <tr>
+                    <td>Optional AMT (Automatic Manual Transmission)</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><br>Fuel Efficiency</td>
+                    <td>Petrol: Around 23-24 km/l (approx.)</td>
+                  </tr>
+                  <tr>
+                    <td>Diesel: Around 27-28 km/l (approx.)</td>
+                  </tr>
+                  <tr>
+                    <td>Seating Capacity</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensions(LxWxH)</td>
+                    <td>3746 mm x 1647 mm x 1535 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Wheelbase</td>
+                    <td>2400 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Boot Space</td>
+                    <td>242 liters</td>
+                  </tr>
+                  <tr>
+                    <td>Fuel Tank Capacity</td>
+                    <td>35 liters</td>
+                  </tr>
+                  <tr>
+                    <td>Safety Features</td>
+                    <td>Dual Front Airbags, ABS with EBD, Corner Stability Control, 
+                        Rear Parking Sensors, Speed-sensing Auto Door Locks, Immobilizer, etc.</td>
+                  </tr>
+                  
+
+                  
+                  <!-- Add more rows for other specifications -->
+                  <!-- Copy the structure for each row -->
+                </tbody>
+              </table>
+              
+        </div>  
+        </div></section>
+
+
+        <section id="prices">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 style="text-align: center; font-size: 600%; color: white;"><i>Models & Prices</i></h1>
+            </div>
+        </div>  
+        </div>
+
+        <div class="container-fluid" style="background-color: black;">
+            <table class="table table-bordered" style="width: 100%" align="center">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="3"><br>Manual</td>
+                    <td>TIAGO XE</td>
+                    <td>₹5,59,900</td>
+                    <td> 
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    
+                    <td>TIAGO XT</td>
+                    <td>₹6,39,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    
+                    <td>TIAGO XZ+DT</td>
+                    <td>₹7,24,900</td>
+                    <td><a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td rowspan="2"><br>Automatic</td>
+                    <td>TIAGO XTA</td>
+                    <td>₹6,94,900</td>
+                    <td><a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIAGO XTA+DT</td>
+                    <td>₹7,79,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td rowspan="3"><br><br>NRG</td>
+                    <td>TIAGO XT NRG</td>
+                    <td>₹6,69,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIAGO NRGAK</td>
+                    <td>₹7,14,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIAGO XZ NRG</td>
+                    <td>₹8,09,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3"><br>iCNG</td>
+                    <td>TIAGO XE</td>
+                    <td>₹6,54,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIAGO XT</td>
+                    <td>₹7,34,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIAGO XZ+DT</td>
+                    <td>₹8,19,900</td>
+                    <td>
+                        <a href="#" class="btn btn-lg" style="background-color: violet; color: white;">Book Now</a>
+
+                    </td>
+                  </tr>
+                  
+                  
+                  <!-- Add more rows for other specifications -->
+                  <!-- Copy the structure for each row -->
+                </tbody>
+              </table>
+        </div></section>
+
+
+</body>
+</html>

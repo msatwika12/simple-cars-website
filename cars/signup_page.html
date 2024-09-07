@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Your existing CSS styles */
+        /* ... */
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            margin-top: 110px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="submit"] {
+            display: block;
+            width: calc(100% - 30px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #070658;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(69, 160, 73);
+        }
+
+        .show-password {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            color: #666;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">SIGN UP</h2>
+        <form id="signupForm" action="#" method="#">
+            <div class="form-group">
+                <label for="fullName"></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="signupUsername"></label>
+                <input type="text" id="signupUsername" name="signupUsername" placeholder="Enter your Username" required>
+            </div>
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="signupPassword"></label>
+                <div style="position: relative;">
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter Password" required>
+                    <span class="show-password" onclick="togglePassword('signupPassword', 'eyeIcon')">
+                        <i id="eyeIcon" class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword"></label>
+                <div style="position: relative;">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                    <span class="show-password" onclick="togglePassword('confirmPassword', 'eyeIconConfirm')">
+                        <i id="eyeIconConfirm" class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+        <p>Already have an account? <a href="login_page.html">Log In</a></p>
+    </div>
+
+    <script>
+        // Function to retrieve previously entered Full Name from local storage
+        function getPreviousFullName() {
+            return localStorage.getItem('previousFullName') || '';
+        }
+
+        // Function to set Full Name in local storage when the field value changes
+        document.getElementById('fullName').addEventListener('input', function(event) {
+            localStorage.setItem('previousFullName', event.target.value);
+        });
+
+        // When the document loads, set the Full Name field value to the previously entered value
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('fullName').value = getPreviousFullName();
+        });
+
+        function togglePassword(passwordFieldId, eyeIconId) {
+            const passwordField = document.getElementById(passwordFieldId);
+            const eyeIcon = document.getElementById(eyeIconId);
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission for demonstration purposes
+
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('signupUsername').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Simple validation (replace this with your authentication logic)
+            if (fullName && username && email && password && confirmPassword && password === confirmPassword) {
+                alert('Sign Up successful!');
+                // Redirect to the home page after successful sign-up
+                window.location.href = 'home1.html'; // Replace 'home_page.html' with your home page URL
+            } else {
+                alert('Please fill in all fields correctly.');
+            }
+        });
+    </script>
+</body>
+
+</html>

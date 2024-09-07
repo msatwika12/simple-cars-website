@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        #car {
+            width: 300px; /* Adjust size as needed */
+            position: absolute;
+            /*top: 50%;*/
+            left: -100px;
+            animation: moveCar 5s linear forwards;
+        }
+        
+
+        @keyframes moveCar {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px));
+            }
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin: 20px;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Booking Confirmed!</h1>
+    <img id="car" src="https://i.pinimg.com/736x/dc/19/e9/dc19e9b94a372ebc21ffeb7623d5632a.jpg" alt="Car Image"><br><br><br><br><br><br><br><br><br>
+    <p class="confirmation-message">Your car is on the way to your home.</p>
+</body>
+</html>

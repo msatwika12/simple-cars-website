@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 80rem;
+        }
+
+        .cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Set the gap between cards */
+            justify-content: center;
+        }
+
+        .card {
+            width: calc(33.33% - 20px); /* Set width for three cards per row */
+            margin-bottom: 20px; /* Adjust margin for spacing */
+            perspective: 1000px;
+            height: 300px; /* Increase the height */
+        }
+
+        .container-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .container-card:hover .front {
+            transform: rotateY(-180deg);
+        }
+
+        .container-card:hover .back {
+            transform: rotateY(0);
+        }
+
+        /* Style adjustments for Explore button */
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #eb4925; /* Set button background color */
+            color: #FFF; /* Set button text color */
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: #a53a0c; /* Change background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cols">
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container-card">
+                    <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                        <div class="inner">
+                            <p>INDIA</p>
+                            <span>Taj Mahal</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                            <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more card divs as needed -->
+        </div>
+    </div>
+</body>
+</html>

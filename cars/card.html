@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Cards</title>
+  <style>
+    /* General Styles */
+    /* Add styles for wrapper and columns if needed */
+
+    .cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* Set the gap between cards */
+      justify-content: center;
+    }
+
+    .card {
+      width: 300px; /* Set a fixed width for cards */
+      height: 200px; /* Set a fixed height for cards */
+      perspective: 1000px; /* Set the depth of the 3D space */
+      position: relative;
+      border-radius: 10px; /* Rounded corners */
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: transform 0.8s; /* Add transition effect */
+      transform-style: preserve-3d;
+    }
+
+    /* Card sides (Front and Back) */
+    .front,
+    .back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px; /* Rounded corners */
+      color: white;
+      font-size: 20px;
+    }
+
+    .front {
+      background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg');
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      background-image: url('https://www.freepik.com/free-photos-vectors/background');
+      transform: rotateY(180deg);
+    }
+
+    /* Explore button */
+    .explore-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-top: 12px;
+      text-decoration: none;
+      background-color: #FF5733; /* Set button background color */
+      color: #FFF; /* Set button text color */
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: #FF814A; /* Change background color on hover */
+    }
+
+    /* Flip card effect */
+    .card-container:hover .container {
+      transform: rotateY(180deg); /* Flip the card on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="cols">
+      <div class="card-container">
+        <div class="card">
+          <div class="container">
+            <div class="front">
+              <p>Front Side</p>
+            </div>
+            <div class="back">
+              <p>Back Side</p>
+              <a href="#" class="explore-btn">Explore</a> <!-- Explore button or other content -->
+            </div>
+          </div>
+        </div>
+        <!-- Add more card-container divs for additional cards -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

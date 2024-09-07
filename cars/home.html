@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Services</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">-->
+  <style>
+    /* Your CSS styles here */
+    /* ... */
+
+    /* Define a class for white color */
+    .white-text {
+      color: white;
+      font-family: Arial, sans-serif; /* Set font family to Arial */
+    }
+    
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.brandname {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 350px;
+  background-image: url("https://thumbs.dreamstime.com/b/web-182027161.jpg?w=768");
+ background-size:cover ;
+ background-clip: text;
+ -webkit-background-clip: text;
+ color: transparent;
+ 
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#navbar ul li {
+  margin-right: 20px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #7e3a3a; /* Link color */
+  font-size: 16px;
+}
+
+#navbar ul li a:hover {
+  color: #f6f6f6; /* Link color on hover */
+}
+
+
+
+header {
+  background-color: #000000; /* Set navbar background color to black */
+  color: #efe9efee;
+  padding: 20px 0;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  display: inline-block;
+  position: relative;
+}
+
+#navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+/* Rectangle shape on hover */
+#navbar ul li a:hover {
+  background-color: #23a3c086;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #686363;
+  min-width: 200px;
+  z-index: 1;
+}
+
+.dropdown-content .dropdown-column {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.dropdown-subcontent a {
+  color: #0a0707;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-subcontent a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Add styles for the dropdown links */
+.dropdown-subcontent {
+  display: none;
+  padding-top: 5px;
+}
+
+.dropdown-subcontent a {
+  color: #333; /* Default link color */
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-subcontent a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.video {
+    width: 100%;
+    height: 100vh; /* Set the video height to 100% of the viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative;
+  }
+
+  .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+  }
+
+/*Sling pics css*/
+
+
+
+
+/* Basic CSS for the slideshow */
+/* Style for the slideshow container with shadow effect */
+.slideshow-container {
+    position: relative;
+    max-width: 1000px; /* Set your desired fixed width for the slider */
+    margin: auto;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow to the container */
+}
+
+.slides {
+    display: flex;
+    position: relative;
+    width: 100%; /* Ensure the slides take 100% width */
+}
+
+.slide {
+    display: none;
+    width: 100%; /* Set the slide width to cover the container */
+    height: auto; /* Allow the height to adjust automatically */
+    object-fit: cover; /* Ensure images cover the entire slide */
+}
+
+/* Other existing styles... */
+
+
+/* Other existing styles... */
+
+
+        /* Style for navigation arrows */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -15px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Change arrow background color */
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Style for dots */
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+        
+
+
+
+        .wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr)); /* Three cards per row */
+      gap: 20px;
+      max-width: 100%; /* Allow the cards to occupy the entire width */
+      margin: 20px;
+      padding: 0;
+    }
+
+    .card {
+      perspective: 1000px;
+      height: 300px;
+    }
+
+    .container-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .front,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .container-card:hover .front {
+      transform: rotateY(-180deg);
+    }
+
+    .container-card:hover .back {
+      transform: rotateY(0);
+    }
+
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .explore-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+      background-color: #eb4925; /* Set button background color */
+      color: #fff; /* Set button text color */
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: #a53a0c; /* Change background color on hover */
+      text-decoration: none;
+    }
+
+        
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="brandname"><b>TATA</b></h1>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Type</a>
+            <div class="dropdown-content">
+              <a href="javascript:void(0)" class="dropdown-category" data-category="personal">Personal</a>
+              <div class="dropdown-subcontent personal">
+                <a href="ALTROZ.html">Altroz</a>
+                <a href="HARRIER.html">Harrier</a>
+                <a href="NEXON.html">Nexon</a>
+                <a href="PUNCH.html">Punch</a>
+                <a href="SAFARI.html">Safari</a>
+                <a href="TIAGO.html">Tiago</a>
+              </div>
+              <a href="javascript:void(0)" class="dropdown-category" data-category="commercial">Commercial</a>
+              <div class="dropdown-subcontent commercial">
+                <a href="tripper.html">Tata ICV Tripper</a>
+                <a href="winger.html">Tata Winger Cargo</a>
+                <a href="ace.html">Tata ACE</a>
+                <a href="yodha.html">Tata Yodha</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="#services">Services</a></li>
+          
+          <li><a href="#about">About Us</a></li>
+          <li>
+            <a href="login_page.html">
+              <span class="white-text"><i class="glyphicon glyphicon-user"></i> Login</span>
+            </a>
+          </li>
+        </ul>
+      </nav></div>
+  </header>
+  <div class="video">
+    <video controls autoplay loop preload="auto">
+      <source src="tatvideo.mp4" type="video/mp4" >
+      </video>
+  </div>
+  <br><br><br><br>
+  <!-- Rest of your content -->
+
+
+
+  <!--slinding picss-->
+  <div class="slideshow-container">
+    <div class="slides">
+        <img src="https://imgctcf.aeplcdn.com/thumbs/p-nc-q-ver54/images/cars/Tata/tata-new-forever-range.jpg?q=75" class="slide" width="100%" height="100%">
+        <img src="https://w0.peakpx.com/wallpaper/898/177/HD-wallpaper-tata-nexon-ev-electric-cars-2020-cars-crossovers-2020-tata-nexon-ev-indian-cars-tata.jpg" class="slide" width="100%" height="100%">
+        <img src="https://www.tatamotors.com/wp-content/uploads/2023/11/press-27aug22-05.jpg" class="slide" width="100%" height="100%">
+        <img src="https://sridha.co.in/wp-content/uploads/2023/02/punch-landscape-banner.jpg" class="slide" width="100%" height="100%">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <!-- Add more dots for additional images -->
+</div>
+<br><br><br>
+<div class="container" style="border:2px solid">
+  <h1 style="margin-left:42%" ><b>TATA MOTORS</b></h1>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Tata Motors Cars is a division of Tata Motors which produces passenger cars under the Tata Motors hood.Tata Motors is among the top five passenger vehicle brands in India with products in the compact, midsize car, and utility vehicle segments.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;The company's manufacturing base in India is spread across Jamshedpur (Jharkhand), Pune (Maharashtra), Lucknow (Uttar Pradesh), Pantnagar (Uttarakhand), Dharwad (Karnataka) and Sanand (Gujarat). 
+  Tata's dealership, sales, service, and spare parts network comprise over 3,500 touchpoints.Tata Motors has more than 250 dealerships in more than 195 cities across 27 states and four Union Territories of India.It has the third-largest sales and service network after Maruti Suzuki and Hyundai.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Cards section using grid layout -->
+<div class="wrapper">
+    <div class="card" ontouchstart="this.classList.toggle('hover');">
+      <div class="container-card">
+        <div class="front" style="background-image: url('https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20220209055617_Altroz_Dark.jpg&w=700&q=90&c=1');">
+          <div class="inner">
+            <h2>ALTROZ</h2>
+          </div>
+        </div>
+        <div class="back">
+          <div class="inner">
+            <p>The irresistible appeal of class and elegance to flaunt the dark personality in you</p>
+            <a href="ALTROZ.html" class="explore-btn" style="text-decoration: none;">Explore</a> <!-- Explore button -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" ontouchstart="this.classList.toggle('hover');">
+        <div class="container-card">
+          <div class="front" style="background-image: url('https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/Galleries/20231009033910_Accomplished%20_%20Front%203_4th%20new.jpg');">
+            <div class="inner">
+              <h2>SAFARI</h2>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>The New Safari is a compelling combination of Grand Design, Cutting-edge Technology & Luxurious Comfort .   </p>
+              <a href="SAFARI.html" class="explore-btn" style="text-decoration: none;">Explore</a> <!-- Explore button -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+        <div class="container-card">
+          <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg?impolicy=resize&imwidth=420');">
+            <div class="inner">
+              <h2>HARRIER</h2>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>The New Harrier symbolizes the unwavering spirit of young achievers in its latest avatar</p>
+              <a href="HARRIER.html" class="explore-btn">Explore</a> <!-- Explore button -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+        <div class="container-card">
+          <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11104/1697698470038/front-left-side-47.jpg');">
+            <div class="inner">
+              <h2>NEXON</h2>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>New Nexon with its raised hood, sleek lamps and dynamic stance gives it an aggressive SUV style. The signature X factor of Nexon has become futuristic.</p>
+              <a href="NEXON.html" class="explore-btn">Explore</a> <!-- Explore button -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+        <div class="container-card">
+          <div class="front" style="background-image: url('https://images.livemint.com/img/2021/10/04/600x338/punch_1633328508005_1633328523019.jpg');">
+            <div class="inner">
+              <h2>PUNCH</h2>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>Presenting Tata PUNCH, the no-compromise SUV. The epitome of class that offers a blend of sporty dynamics and tough utility.</p>
+              <a href="PUNCH.html" class="explore-btn">Explore</a> <!-- Explore button -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+        <div class="container-card">
+          <div class="front" style="background-image: url('https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/39345/tiago-exterior-left-front-three-quarter-2.jpeg?isig=0&q=80');">
+            <div class="inner">
+              <h2>TIAGO</h2>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>Configure your Tiago for a Seriously Fun ride and have it delivered to your door or drive away from your nearest dealership. </p>
+              <a href="TIAGO.html" class="explore-btn">Explore</a> <!-- Explore button -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Repeat the above card divs for other cards -->
+    <!-- ... -->
+  </div>
+
+
+
+
+
+
+<!-- ... (your existing HTML content) ... -->
+<!-- ... (your existing HTML content) ... -->
+
+<!-- Footer section -->
+<footer style="background-color: black; color: white; text-align: center; padding: 20px;">
+    <div>
+      <p>Contact us: <a href="mailto:satwikamanchikanti@mail.com">satwikamanchikanti.com</a></p>
+      <p>Keshav Memorial Institute of Technology <br>Narayanguda,Hyderabad. Pincode. 500029</p>
+      <p>&copy; 2024 TATA. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  
+  
+
+
+
+
+  <script>
+    // Function to toggle visibility of dropdown content
+    function toggleDropdown(category) {
+      const dropdownSubcontent = document.querySelectorAll('.dropdown-subcontent');
+
+      // Hide all dropdown subcontent
+      dropdownSubcontent.forEach((content) => {
+        content.style.display = 'none';
+      });
+
+      // Show the selected dropdown content
+      const selectedDropdown = document.querySelector(`.dropdown-subcontent.${category}`);
+      if (selectedDropdown) {
+        selectedDropdown.style.display = 'block';
+      }
+    }
+
+    // Add event listeners to dropdown categories
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownCategories = document.querySelectorAll('.dropdown-category');
+      dropdownCategories.forEach((category) => {
+        category.addEventListener('click', function() {
+          const selectedCategory = this.getAttribute('data-category');
+          toggleDropdown(selectedCategory);
+        });
+      });
+
+      // Create an image element
+
+      // Append the image to the "Login" link span
+      const loginText = document.querySelector('.white-text');
+      loginText.appendChild(loginImage);
+    });
+
+
+    //sliding  picssss
+
+    let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            setTimeout(showSlides, 5000); // Change image every 5 seconds (5000 milliseconds)
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+  </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book now</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <style>
+         /* Custom CSS for hover effect */
+         .btn-primary:hover {
+            background-color: darkblue;
+            border-color: darkblue;
+        }
+
+        .btn-primary:hover:focus {
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .btn-primary:focus {
+            box-shadow: solid 2px;
+        }
+        .container {
+  /* Add padding and background color for visibility */
+            padding: 20px;
+            background-color: #ffffff;
+  
+  /* Add box-shadow */
+            box-shadow: 0 4px 8px 0 rgba(138, 46, 46, 0.5); /* Change values as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 style="text-align: center;">BOOK NOW</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+            
+        </form>
+    </div></div>
+
+
+    <div class="container mt-4">
+        <h1 style="text-align: center;">Delivery Details</h1>
+        <form>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select class="form-control" id="state">
+                    <option value="">Select State</option>
+                    <option value="ts">Telangana</option>
+                    <option value="ap">Andhra Pradesh</option>
+                    <option value="tn">Tamil Nadu</option>
+                    <option value="m">Maharastra</option>
+                    <!-- Add more state options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select class="form-control" id="city">
+                    <option value="">Select City</option>
+                    <!-- Cities will be dynamically populated based on the selected state -->
+                </select>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="fuelType">Duration:</label>
+                <select class="form-control" id="fuelType">
+                    <option value="">select duration</option>
+                    <option value="petrol">less than 1 month</option>
+                    <option value="diesel">less than 3 months</option>
+                    <option value="electric">less than 6 months</option>
+                    <option value="electric">less than 1 year</option>
+                    <!-- Add more fuel type options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Date of Wanted">Enter date wanted by:</label>
+                <input type="date" class="form-control" id="checkin" required>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+    </div>
+
+    <script>
+              $(document).ready(function () {
+            // City options grouped by state
+            var citiesByState = {
+                ts: ["Hyderabad", "Warangal", "Nizamabad", "Nalgonda", "Khammam","Karimnagar","Suryapet"], // Replace with cities for State 1
+                ap: ["Visakhapatnam", "Vijayawada", "Guntur","Kakinada","Kurnool","Rajahmundry","Nellore","Tirupati"] , // Replace with cities for State 2
+                tn:["Kanchipuram","Vellore","Tiruchirappalli","Coimbatore","Madurai","Chennai"],
+                m:["Mumbai","Pune","Amravati","Aurangabad","Nashik","Solapur","Nagpur","Kolhapur","Jalna"]// Add more states and their respective cities as needed
+            };
+
+            // Function to update city dropdown based on selected state
+            $("#state").change(function () {
+                var selectedState = $(this).val();
+                var cityDropdown = $("#city");
+
+                // Clear city dropdown options
+                cityDropdown.empty();
+
+                // Add default option
+                cityDropdown.append('<option value="">Select City</option>');
+
+                // Populate city dropdown based on selected state
+                if (selectedState !== "") {
+                    $.each(citiesByState[selectedState], function (index, value) {
+                        cityDropdown.append('<option value="' + value + '">' + value + '</option>');
+                    });
+                }
+            });
+            function displayNotification(message, redirectPage) {
+            // Create a notification pop-up
+            var confirmation = confirm(message);
+
+            // If OK is clicked on the confirmation pop-up, redirect to the specified page
+            if (confirmation) {
+                window.location.href = redirectPage;
+            }
+        }
+
+        // Handling form submission
+        $("form").submit(function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Check if all required fields are filled
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var phone = $("#phone").val();
+            var address = $("#address").val();
+            var state = $("#state").val();
+            var city = $("#city").val();
+            var duration = $("#fuelType").val();
+            var wantedDate = $("#checkin").val();
+
+            // Check if all necessary details are provided
+            if (name && email && phone && address && state && city && duration && wantedDate) {
+                // Assuming that the condition for booking availability is met
+                var message = "Your car is booked and available by " + wantedDate + ". Click OK to proceed to delivery.";
+                var redirectPage = "booking_confirmed.html"; // Change this to the actual page URL
+
+                displayNotification(message, redirectPage);
+            } else {
+                // If any field is missing, display an error message
+                displayNotification("Please fill in all the details.", "");
+            }
+        });
+        });
+
+
+
+    </script>
+</body>
+</html>

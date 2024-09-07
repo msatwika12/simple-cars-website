@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Services</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">-->
+  <style>
+    /* Your CSS styles here */
+    /* ... */
+
+    /* Define a class for white color */
+    .white-text {
+      color: white;
+      font-family: Arial, sans-serif; /* Set font family to Arial */
+    }
+    *{
+      margin: 0px;
+    }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.brandname {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 350px;
+  background-image: url("https://thumbs.dreamstime.com/b/web-182027161.jpg?w=768");
+ background-size:cover ;
+ background-clip: text;
+ -webkit-background-clip: text;
+ color: transparent;
+ 
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#navbar ul li {
+  margin-right: 20px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #7e3a3a; /* Link color */
+  font-size: 16px;
+}
+
+#navbar ul li a:hover {
+  color: #f6f6f6; /* Link color on hover */
+}
+
+
+
+header {
+  background-color: #000000; /* Set navbar background color to black */
+  color: #efe9efee;
+  padding: 20px 0;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  display: inline-block;
+  position: relative;
+}
+
+#navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+/* Rectangle shape on hover */
+#navbar ul li a:hover {
+  background-color: #23a3c086;
+  border-radius: 5px; /* Rounded corners */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #686363;
+  min-width: 200px;
+  z-index: 1;
+}
+
+.dropdown-content .dropdown-column {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.dropdown-subcontent a {
+  color: #0a0707;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-subcontent a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Add styles for the dropdown links */
+.dropdown-subcontent {
+  display: none;
+  padding-top: 5px;
+}
+
+.dropdown-subcontent a {
+  color: #333; /* Default link color */
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-subcontent a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.video {
+    width: 100%;
+    height: 100vh; /* Set the video height to 100% of the viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative;
+  }
+
+  .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+  }
+
+/*Sling pics css*/
+
+
+
+
+/* Basic CSS for the slideshow */
+.slideshow-container {
+            position: relative;
+            max-width: 65%; /* Set the maximum width of the slideshow */
+            margin:auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); /* Add shadow to the slideshow container */
+        }
+
+        .slides {
+            display: flex;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the images cover the entire container */
+        }
+
+        /* Style for navigation arrows */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -15px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Change arrow background color */
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Style for dots */
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+        
+
+        /*cards css*/
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 80rem;
+        }
+
+       /* Adjust card width and gap between cards */
+.card {
+    width: calc(33.33% - 20px); /* Set width for three cards per row */
+    margin-bottom: 20px; /* Adjust margin for spacing */
+    perspective: 1000px;
+    height: 300px; /* Height of the card */
+}
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Set the gap between cards */
+    justify-content: center;
+    max-width: 1200px; /* Limit the width of the card container */
+    margin: 0 auto; /* Center the card container */
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Set width for two cards per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* Set width for one card per row on even smaller screens */
+    }
+}
+
+
+        .container-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .container-card:hover .front {
+            transform: rotateY(-180deg);
+        }
+
+        .container-card:hover .back {
+            transform: rotateY(0);
+        }
+
+        /* Style adjustments for Explore button */
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #eb4925; /* Set button background color */
+            color: #FFF; /* Set button text color */
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: #a53a0c; /* Change background color on hover */
+        }
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="brandname"><b>TATA</b></h1>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Type</a>
+            <div class="dropdown-content">
+              <a href="javascript:void(0)" class="dropdown-category" data-category="personal">Personal</a>
+              <div class="dropdown-subcontent personal">
+                <a href="ALTROZ.html">Altroz</a>
+                <a href="#personalLink2">Harrier</a>
+                <a href="#personalLink3">Nexon</a>
+                <a href="#personalLink4">Punch</a>
+                <a href="#personalLink5">Safari</a>
+                <a href="#personalLink6">Tiago</a>
+              </div>
+              <a href="javascript:void(0)" class="dropdown-category" data-category="commercial">Commercial</a>
+              <div class="dropdown-subcontent commercial">
+                <a href="#commercialLink1">Commercial Link 1</a>
+                <a href="#commercialLink2">Commercial Link 2</a>
+                <a href="#commercialLink3">Commercial Link 3</a>
+                <a href="#commercialLink4">Commercial Link 4</a>
+                <a href="#commercialLink5">Commercial Link 5</a>
+                <a href="#commercialLink6">Commercial Link 6</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="#services">Services</a></li>
+          
+          <li><a href="#about">About Us</a></li>
+          <li>
+            <a href="login_page.html">
+              <span class="white-text"><i class="glyphicon glyphicon-user"></i> Login</span>
+            </a>
+          </li>
+        </ul>
+      </nav></div>
+  </header><br><br><br>
+  <div class="video">
+    <video controls autoplay loop preload="auto">
+      <source src="tatvideo.mp4" type="video/mp4" >
+      </video>
+  </div>
+  <br><br><br><br>
+  <!-- Rest of your content -->
+
+
+
+  <!--slinding picss-->
+  <div class="slideshow-container">
+    <div class="slides">
+        <img src="https://imgd-ct.aeplcdn.com/320x200/n/cw/ec/144851/exter-exterior-right-front-three-quarter-29.jpeg?isig=0&q=80" class="slide" width="100%" height="100%">
+        <img src="https://www.topgear.com/sites/default/files/2022/07/13.jpg" class="slide" width="100%" height="100%">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH4zhSM82aOyUCoJq2i3k27OYPNgu62NaGJg&usqp=CAU" class="slide" width="100%" height="100%">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <!-- Add more dots for additional images -->
+</div>
+<br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+<!--cards-->
+
+<div class="wrapper">
+  <div class="cols">
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card" ontouchstart="this.classList.toggle('hover');">
+          <div class="container-card">
+              <div class="front" style="background-image: url('https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480');">
+                  <div class="inner">
+                      <p>INDIA</p>
+                      <span>Taj Mahal</span>
+                  </div>
+              </div>
+              <div class="back">
+                  <div class="inner">
+                      <p>Taj Mahal is a beautiful and most attractive historical place in India</p>
+                      <a href="#" class="explore-btn">Explore</a> <!-- Explore button -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Add more card divs as needed -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // Function to toggle visibility of dropdown content
+    function toggleDropdown(category) {
+      const dropdownSubcontent = document.querySelectorAll('.dropdown-subcontent');
+
+      // Hide all dropdown subcontent
+      dropdownSubcontent.forEach((content) => {
+        content.style.display = 'none';
+      });
+
+      // Show the selected dropdown content
+      const selectedDropdown = document.querySelector(`.dropdown-subcontent.${category}`);
+      if (selectedDropdown) {
+        selectedDropdown.style.display = 'block';
+      }
+    }
+
+    // Add event listeners to dropdown categories
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownCategories = document.querySelectorAll('.dropdown-category');
+      dropdownCategories.forEach((category) => {
+        category.addEventListener('click', function() {
+          const selectedCategory = this.getAttribute('data-category');
+          toggleDropdown(selectedCategory);
+        });
+      });
+
+      // Create an image element
+
+      // Append the image to the "Login" link span
+      const loginText = document.querySelector('.white-text');
+      loginText.appendChild(loginImage);
+    });
+
+
+    //sliding  picssss
+
+    let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            setTimeout(showSlides, 5000); // Change image every 5 seconds (5000 milliseconds)
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+  </script>
+</body>
+</html>
